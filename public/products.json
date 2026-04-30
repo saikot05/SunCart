@@ -1,0 +1,133 @@
+[{
+        "id": 1,
+        "name": "UV Protection Sunglasses",
+        "brand": "SunShade",
+        "price": 15,
+        "rating": 4.7,
+        "stock": 10,
+        "description": "Stylish UV protection sunglasses perfect for summer outings.",
+        "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400",
+        "category": "Accessories"
+    },
+    {
+        "id": 2,
+        "name": "Lightweight Beach Sandals",
+        "brand": "CoastalStep",
+        "price": 22,
+        "rating": 4.5,
+        "stock": 25,
+        "description": "Comfortable and water-resistant sandals ideal for beach walks and poolside lounging.",
+        "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400",
+        "category": "Footwear"
+    },
+    {
+        "id": 3,
+        "name": "SPF 50 Sunscreen Lotion",
+        "brand": "GlowGuard",
+        "price": 12,
+        "rating": 4.8,
+        "stock": 40,
+        "description": "Broad-spectrum SPF 50 sunscreen that protects your skin from UVA and UVB rays all day long.",
+        "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400",
+        "category": "Skincare"
+    },
+    {
+        "id": 4,
+        "name": "Foldable Sun Hat",
+        "brand": "BreezeWear",
+        "price": 18,
+        "rating": 4.4,
+        "stock": 15,
+        "description": "Wide-brim foldable hat made from breathable straw material, perfect for outdoor summer activities.",
+        "image": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400",
+        "category": "Accessories"
+    },
+    {
+        "id": 5,
+        "name": "Portable Cooling Towel",
+        "brand": "ChillPro",
+        "price": 9,
+        "rating": 4.3,
+        "stock": 50,
+        "description": "Instant cooling microfiber towel that keeps you refreshed during workouts, hiking, or hot summer days.",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
+        "category": "Sports & Outdoors"
+    },
+    {
+        "id": 6,
+        "name": "Inflatable Pool Float",
+        "brand": "AquaFun",
+        "price": 28,
+        "rating": 4.6,
+        "stock": 20,
+        "description": "Giant flamingo-shaped inflatable float for ultimate pool relaxation. Durable and easy to inflate.",
+        "image": "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=400",
+        "category": "Pool & Beach"
+    },
+    {
+        "id": 7,
+        "name": "Breathable Linen Shirt",
+        "brand": "SummerThreads",
+        "price": 35,
+        "rating": 4.5,
+        "stock": 30,
+        "description": "Ultra-light linen shirt with a relaxed fit — keeps you cool and stylish on the hottest days.",
+        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+        "category": "Clothing"
+    },
+    {
+        "id": 8,
+        "name": "Insulated Water Bottle (32oz)",
+        "brand": "HydroFlow",
+        "price": 24,
+        "rating": 4.9,
+        "stock": 35,
+        "description": "Stainless steel vacuum-insulated bottle that keeps drinks cold for up to 24 hours — summer essential.",
+        "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400",
+        "category": "Drinkware"
+    },
+    {
+        "id": 9,
+        "name": "Waterproof Dry Bag (20L)",
+        "brand": "WaveGuard",
+        "price": 32,
+        "rating": 4.6,
+        "stock": 18,
+        "description": "Roll-top waterproof dry bag perfect for kayaking, rafting, or beach trips. Keeps gear 100% dry.",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
+        "category": "Sports & Outdoors"
+    },
+    {
+        "id": 10,
+        "name": "Tropical Print Swim Shorts",
+        "brand": "WaveRider",
+        "price": 20,
+        "rating": 4.3,
+        "stock": 45,
+        "description": "Quick-dry swim shorts with a vibrant tropical print and built-in mesh liner for maximum comfort.",
+        "image": "https://images.unsplash.com/photo-1562572159-4efc207f5aff?w=400",
+        "category": "Clothing"
+    },
+    {
+        "id": 11,
+        "name": "Portable Beach Umbrella",
+        "brand": "ShadeMax",
+        "price": 42,
+        "rating": 4.7,
+        "stock": 12,
+        "description": "Wind-resistant 6.5ft beach umbrella with UPF 50+ canopy and sand anchor for secure setup.",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+        "category": "Pool & Beach"
+    },
+    {
+        "id": 12,
+        "name": "After-Sun Aloe Vera Gel",
+        "brand": "CoolDerm",
+        "price": 11,
+        "rating": 4.8,
+        "stock": 60,
+        "description": "Soothing aloe vera gel that instantly relieves sunburn, hydrates skin, and reduces redness after sun exposure.",
+        "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400",
+        "category": "Skincare"
+    }
+]
