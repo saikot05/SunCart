@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-base-200 bg-base-100/70 backdrop-blur-lg">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="container mx-auto flex h-16  items-center justify-between px-6">
 
         <div className="flex items-center gap-3">
           <button
@@ -46,7 +46,7 @@ const Navbar = () => {
           <Link href="/">
             <h2 className="flex items-center gap-2 text-xl font-extrabold mb-3">
                 <GiSun className="text-orange-500" />
-                <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
                     SunCart
                 </span>
             </h2>
@@ -56,12 +56,12 @@ const Navbar = () => {
         <ul className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className={`btn btn-ghost btn-sm ${pathname === item.href ? "bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent font-bold" : "" }`}>
+              <Link href={item.href} className={`btn btn-ghost btn-sm ${pathname === item.href ? "bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent font-bold" : "" }`}>
                 {item.label}
                 {isActive(item.href) && (
                   <span
                     className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full"
-                    style={{ background: "linear-gradient(90deg, #f97316, #eab308)" }}
+                    style={{ background: "linear-gradient(90deg, #f97316, #ec4899)" }}
                   />
                 )}
               </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
               <Link
                 href="/register"
                 className="btn btn-sm text-white border-0"
-                style={{ background: "linear-gradient(90deg, #f97316, #eab308)" }}
+                style={{ background: "linear-gradient(90deg, #f97316, #ec4899)" }}
               >
                 Register
               </Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
                   style={
                     isActive(item.href)
                       ? {
-                          background: "linear-gradient(90deg, #f97316, #eab308)",
+                          background: "linear-gradient(90deg, #f97316, #ec4899)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
                           backgroundClip: "text",
@@ -139,7 +139,7 @@ const Navbar = () => {
                   <Link
                     href="/register"
                     className="btn btn-sm w-full text-white border-0"
-                    style={{ background: "linear-gradient(90deg, #f97316, #eab308)" }}
+                    style={{ background: "linear-gradient(90deg, #f97316, #ec4899)" }}
                   >
                     Register
                   </Link>

@@ -3,7 +3,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
-import { ThemeProvider } from "next-themes";
+import { ThemeProviders } from "./ThemeProviders";
+
+
 
 
 
@@ -28,16 +30,16 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning
     >
-      <body>
-        <ThemeProvider>
+      <body className="flex flex-col min-h-screen">
+        <ThemeProviders>
           <AuthProvider>
             <Navbar />
-            <main className="flex-1 min-h-screen">
+            <main className="flex-1">
               {children}
             </main>
             <Footer />
           </AuthProvider>
-        </ThemeProvider>
+        </ThemeProviders>
       </body>
     </html>
   );
