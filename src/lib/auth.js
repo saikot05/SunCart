@@ -13,6 +13,10 @@ export const auth = betterAuth({
         // Optional: if you don't provide a client, database transactions won't be enabled.
         client
     }),
+    trustedOrigins: [
+        "http://localhost:3000",
+        "https://sun-cart-8l8y-git-main-saikot05s-projects.vercel.app",
+    ],
     emailAndPassword: {
         enabled: true,
     },

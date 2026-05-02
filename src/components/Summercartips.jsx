@@ -1,9 +1,9 @@
 import * as FaIcons from "react-icons/fa";
 import * as GiIcons from "react-icons/gi";
-
+import tips from "../../public/tips.json";
 const SummerCareTips = async () => {
-  const res = await fetch(`${process.env.BETTER_AUTH_URL}/tips.json`);
-  const tips = await res.json();
+  // const res = await fetch(`${process.env.BETTER_AUTH_URL}/tips.json`);
+  //  const tips = await res.json();
 
   return (
     <section className="py-14 px-6 bg-white">

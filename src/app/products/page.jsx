@@ -2,7 +2,7 @@ import { GiSunflower } from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
 import ProductsCard from "@/components/ProductsCard";
 import SearchFilter from "@/components/SearchFilter";
-import products from "@/public/products.json";
+import products from "../../../public/products.json";
 const Products = async ({ searchParams }) => {
   // const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
   // const products = await res.json();

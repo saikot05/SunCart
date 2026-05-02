@@ -1,10 +1,10 @@
 import { FaMedal, FaCheckCircle } from "react-icons/fa";
 import { GiDiamondRing } from "react-icons/gi";
 import { HiSparkles } from "react-icons/hi";
-
+import brands from "../../public/brands.json";
 const TopBrands = async () => {
-  const res = await fetch(`${process.env.BETTER_AUTH_URL}/brands.json`);
-  const brands = await res.json();
+  // const res = await fetch(`${process.env.BETTER_AUTH_URL}/brands.json`);
+  // const brands = await res.json();
 
   return (
     <section className="py-14 px-6 bg-white">

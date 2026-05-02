@@ -3,10 +3,10 @@ import Link from "next/link";
 import { FaArrowRight, FaFire } from "react-icons/fa";
 import { GiSunflower } from "react-icons/gi";
 import ProductsCard from "./ProductsCard";
-
+import products from "../../public/products.json";
 const PopularProducts = async () => {
-  const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
-  const products = await res.json();
+  // const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
+  // const products = await res.json();
   const featured = products.slice(0, 3);
 
   return (

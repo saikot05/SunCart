@@ -13,7 +13,7 @@ import {
     FiAlertCircle,
 } from "react-icons/fi";
 import AddToCartButton from "@/components/AddToCartButton"; 
-import products from "@/public/products.json";
+import products from "../../../../public/products.json";
 
 const ProductDetailsPage = async ({ params }) => {
     const { id } = await params;
