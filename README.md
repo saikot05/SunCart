@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌞 SunCart – Summer Essentials Store
 
-## Getting Started
+A modern summer-themed eCommerce web application built with **Next.js**, where users can explore and purchase seasonal products like sunglasses, summer outfits, skincare, beach accessories, and more.
 
-First, run the development server:
+## 🌐 Live URL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 [https://sun-cart-8l8y.vercel.app](https://sun-cart-8l8y.vercel.app)
+
+---
+
+## 🎯 Purpose
+
+SunCart is a summer eCommerce platform that allows users to browse seasonal products, view detailed product pages, and place orders — all after secure authentication. The platform features Google OAuth and email/password login powered by BetterAuth.
+
+---
+
+## ✨ Key Features
+
+- 🔐 **User Authentication** — Email/password login & Google OAuth via `better-auth`
+- 🛍️ **Product Listing** — Browse summer products with name, rating, price & image
+- 🔒 **Protected Product Details** — Only accessible after login; redirects back after auth
+- 🛒 **Shopping Cart** — Add and manage cart items
+- 👤 **My Profile** — View logged-in user's name, email, and photo
+- ✏️ **Update Profile** — Update display name and profile picture
+- 🌅 **Hero Section** — Summer sale banner with offers and hot deals
+- 💡 **Summer Care Tips** — Skincare and hydration tips section
+- 🏷️ **Top Brands** — Static brand showcase section
+- 📱 **Fully Responsive** — Mobile, tablet, and desktop support
+- 🔒 **Environment Variables** — All sensitive keys secured via `.env.local`
+
+---
+
+## 🛠️ Tech Stack & NPM Packages
+
+### Framework & Core
+| Package | Purpose |
+|---------|---------|
+| `next` | React framework with App Router |
+| `react` | UI library |
+| `react-dom` | DOM rendering |
+
+### Authentication
+| Package | Purpose |
+|---------|---------|
+| `better-auth` | Full-stack auth (email + Google OAuth) |
+
+### Database
+| Package | Purpose |
+|---------|---------|
+| `mongodb` | MongoDB driver |
+
+### Styling & UI
+| Package | Purpose |
+|---------|---------|
+| `tailwindcss` | Utility-first CSS framework |
+| `daisyui` | Tailwind component library |
+
+### Animations (Bonus)
+| Package | Purpose |
+|---------|---------|
+| `animate.css` | CSS animation library |
+
+---
+
+## 📁 Project Structure
+
+```
+sun-cart/
+├── app/
+│   ├── api/
+│   │   └── auth/              # BetterAuth API routes
+│   ├── (auth)/
+│   │   ├── login/             # Login page
+│   │   └── register/          # Register page
+│   ├── products/
+│   │   └── [id]/              # Protected product details page
+│   ├── my-profile/            # User profile page
+│   │   └── update/            # Update profile form
+│   ├── layout.js              # Root layout (Navbar + Footer)
+│   └── page.js                # Home page
+├── lib/
+│   ├── auth.js                # BetterAuth server config
+│   └── authClient.js          # BetterAuth client config
+├── data/
+│   └── products.json          # Static summer products data
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   └── ProductCard.jsx
+├── .env.local
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ⚙️ Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root directory:
 
-## Learn More
+```env
+MONGO_URI=your-mongodb-connection-string
+BETTER_AUTH_URL=https://sun-cart-8l8y.vercel.app
+BETTER_AUTH_SECRET=your-minimum-32-character-secret
+Google_Client_Id=your-google-oauth-client-id
+Google_Client_Secret=your-google-oauth-client-secret
+NEXT_PUBLIC_APP_URL=https://sun-cart-8l8y.vercel.app
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Clone the repository
+git clone https://github.com/saikot05/sun-cart.git
+cd sun-cart
 
-## Deploy on Vercel
+# Install dependencies
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Run development server
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📦 Sample Product Data Format
+
+```json
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://i.postimg.cc/example1.png",
+    "category": "Accessories"
+  }
+]
+```
+
+---
+
+## 🚢 Deployment
+
+Deployed on **Vercel**. To deploy your own:
+
+1. Push code to GitHub
+2. Import project at [vercel.com](https://vercel.com)
+3. Add all environment variables in **Vercel Dashboard → Settings → Environment Variables**
+4. Deploy!
+
+> ⚠️ Make sure `BETTER_AUTH_URL` is set to your **production URL** on Vercel.
+
+---
+
+## 👨‍💻 Author
+
+**Saikot** — [GitHub](https://github.com/saikot05)
