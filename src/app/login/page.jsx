@@ -35,6 +35,10 @@ const LoginPage = () => {
             provider: "google",
             callbackURL: "/",
             fetchOptions: {
+                onSuccess: () => {
+                    toast.success("Registration successful!");
+                    router.push("/");
+                },
                 onError: (ctx) => {
                     toast.error(ctx.error.message || "Google login failed!");
                 },
