@@ -21,7 +21,7 @@ const ProductDetailsPage = async ({ params }) => {
     });
     if (!session) redirect(`/login?callbackUrl=/products/${id}`);
 
-    const res = await fetch("http://localhost:3000/products.json");
+    const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
     const products = await res.json();
     const product = products.find((p) => p.id === parseInt(id));
     if (!product) {

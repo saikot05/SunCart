@@ -2,7 +2,7 @@ import * as FaIcons from "react-icons/fa";
 import * as GiIcons from "react-icons/gi";
 
 const SummerCareTips = async () => {
-  const res = await fetch("http://localhost:3000/tips.json");
+  const res = await fetch(`${process.env.BETTER_AUTH_URL}/tips.json`);
   const tips = await res.json();
 
   return (

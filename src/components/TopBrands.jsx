@@ -3,7 +3,7 @@ import { GiDiamondRing } from "react-icons/gi";
 import { HiSparkles } from "react-icons/hi";
 
 const TopBrands = async () => {
-  const res = await fetch("http://localhost:3000/brands.json");
+  const res = await fetch(`${process.env.BETTER_AUTH_URL}/brands.json`);
   const brands = await res.json();
 
   return (

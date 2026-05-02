@@ -5,7 +5,7 @@ import { GiSunflower } from "react-icons/gi";
 import ProductsCard from "./ProductsCard";
 
 const PopularProducts = async () => {
-  const res = await fetch("http://localhost:3000/products.json");
+  const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
   const products = await res.json();
   const featured = products.slice(0, 3);
 

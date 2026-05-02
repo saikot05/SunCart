@@ -4,7 +4,7 @@ import ProductsCard from "@/components/ProductsCard";
 import SearchFilter from "@/components/SearchFilter";
 
 const Products = async ({ searchParams }) => {
-  const res = await fetch("http://localhost:3000/products.json");
+  const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
   const products = await res.json();
 
   const { q, category: selectedCategory = "" } = await searchParams; // ✅ একবারই declare
