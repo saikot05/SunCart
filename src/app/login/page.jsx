@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
