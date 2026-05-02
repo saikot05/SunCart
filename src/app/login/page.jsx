@@ -22,7 +22,7 @@ const LoginPage = () => {
         });
 
         if (error) {
-            toast.error(error.message || "Login failed. Please try again.");
+            toast.error("Login failed. Please try again.");
             return;
         }
 
@@ -36,11 +36,11 @@ const LoginPage = () => {
             callbackURL: "/",
             fetchOptions: {
                 onSuccess: () => {
-                    toast.success("Registration successful!");
+                    toast.success("Login successful!");
                     router.push("/");
                 },
-                onError: (ctx) => {
-                    toast.error(ctx.error.message || "Google login failed!");
+                onError: () => {
+                    toast.error("Google login failed!");
                 },
             },
         });
@@ -48,7 +48,7 @@ const LoginPage = () => {
 
     return (
         <div className="container mx-auto min-h-screen flex justify-center items-center">
-            <div className="flex flex-col gap-6 w-96">
+            <div className="flex flex-col gap-6 w-96 bg-white p-8 rounded-lg shadow-lg animate__animated animate__fadeInUp">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold">Login</h1>
                     <p className="text-default-500 text-sm mt-1">Sign in to your account</p>

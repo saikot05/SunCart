@@ -42,8 +42,8 @@ const RegisterPage = () => {
                 toast.success("Registration successful!");
                 router.push("/");
                  },
-                onError: (ctx) => {
-                    toast.error(ctx.error.message || "Google login failed!");
+                onError: () => {
+                    toast.error("Google login failed!");
                 },
             },
         });
@@ -51,7 +51,7 @@ const RegisterPage = () => {
 
     return (
         <div className="container mx-auto min-h-screen flex justify-center items-center bg-slate-100">
-            <div className="flex flex-col gap-6 w-96 bg-white p-8 rounded-lg shadow-lg">
+            <div className="flex flex-col gap-6 w-96 bg-white p-8 rounded-lg shadow-lg animate__animated animate__fadeInUp">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold">Register</h1>
                     <p className="text-default-500 text-sm mt-1">Create a new account</p>

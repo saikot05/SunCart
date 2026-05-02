@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight, FaFire, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaArrowRight, FaFire } from "react-icons/fa";
 import { GiSunflower } from "react-icons/gi";
 import ProductsCard from "./ProductsCard";
 

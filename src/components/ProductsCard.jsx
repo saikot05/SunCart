@@ -7,11 +7,11 @@ const ProductsCard = ({ product }) => {
   return (
     <div className="bg-base-100 border border-base-200 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
 
-      <div className="relative w-full h-56 overflow-hidden">
+      <div className="relative w-full aspect-[4/3] overflow-hidden">
         <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover min-h-[400px] lg:min-h-[520px]"
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-4 left-4">
             <span className="badge badge-primary badge-lg font-semibold gap-1">
