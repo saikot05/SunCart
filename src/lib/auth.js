@@ -15,6 +15,7 @@ export const auth = betterAuth({
     }),
     trustedOrigins: [
         "http://localhost:3000",
+        "https://sun-cart-8l8y.vercel.app/",
         "https://sun-cart-8l8y-git-main-saikot05s-projects.vercel.app",
     ],
     emailAndPassword: {
