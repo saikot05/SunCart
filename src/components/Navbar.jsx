@@ -9,6 +9,7 @@ import { useTheme } from "next-themes";
 import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
 import 'animate.css';
+import { router } from "better-auth/api";
 
 const Navbar = () => {
   const userData = authClient.useSession();
@@ -21,6 +22,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await authClient.signOut();
+    router.push("/");
   };
 
   const initials = user?.name?.split(" ").map((n) => n[0]).join("").toUpperCase();
@@ -64,7 +66,7 @@ const Navbar = () => {
           {user ? (
             <div className="hidden md:block dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-                <Avatar className="w-9 h-9">
+                <Avatar>
                   <Avatar.Image alt={user.name} src={user.image} />
                   <Avatar.Fallback>{initials}</Avatar.Fallback>
                 </Avatar>

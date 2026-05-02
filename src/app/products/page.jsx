@@ -1,10 +1,29 @@
 import { GiSunflower } from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
 import ProductsCard from "@/components/ProductsCard";
+import SearchFilter from "@/components/SearchFilter";
 
-const Products = async () => {
+const Products = async ({ searchParams }) => {
   const res = await fetch("http://localhost:3000/products.json");
   const products = await res.json();
+
+  const { q, category: selectedCategory = "" } = await searchParams; // ✅ একবারই declare
+  const query = q?.toLowerCase() ?? "";                               // ✅ q থেকে নেওয়া
+
+  const categories = [...new Set(products.map((p) => p.category).filter(Boolean))];
+
+  const afterSearch = products.filter((p) => {
+    if (!query) return true;
+    return (
+      p.name?.toLowerCase().includes(query) ||
+      p.description?.toLowerCase().includes(query)
+    );
+  });
+
+  const sorted = [...afterSearch].sort((a, b) => {
+    if (!selectedCategory) return 0;
+    return (a.category === selectedCategory ? -1 : 1) - (b.category === selectedCategory ? -1 : 1);
+  });
 
   return (
     <section className="py-14 px-6 bg-base-200 min-h-screen">
@@ -25,9 +44,15 @@ const Products = async () => {
           </p>
         </div>
 
+        <SearchFilter categories={categories} />
+
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductsCard key={product.id} product={product} />
+          {sorted.map((product) => (
+            <ProductsCard
+              key={product.id}
+              product={product}
+              highlighted={!selectedCategory || product.category === selectedCategory}
+            />
           ))}
         </div>
 

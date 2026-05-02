@@ -2,13 +2,14 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const LoginPage = () => {
     const router = useRouter();
-
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl") || "/";
     const handleLoginFunc = async (e) => {
         e.preventDefault();
 
@@ -18,7 +19,7 @@ const LoginPage = () => {
         const { data, error } = await authClient.signIn.email({
             email: email,
             password: password,
-            callbackURL: "/",
+            callbackURL: callbackUrl,
         });
 
         if (error) {
@@ -27,17 +28,17 @@ const LoginPage = () => {
         }
 
         toast.success("Login successfully!");
-        router.push("/");
+        router.push(callbackUrl);
     };
 
     const handleGoogle = async () => {
         await authClient.signIn.social({
             provider: "google",
-            callbackURL: "/",
+            callbackURL: callbackUrl,
             fetchOptions: {
                 onSuccess: () => {
                     toast.success("Login successful!");
-                    router.push("/");
+                    router.push(callbackUrl);
                 },
                 onError: () => {
                     toast.error("Google login failed!");

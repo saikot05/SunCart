@@ -1,23 +1,25 @@
-
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { FiTag } from "react-icons/fi";
 
-const ProductsCard = ({ product }) => {
+const ProductsCard = ({ product, highlighted = true }) => {
   return (
-    <div className="bg-base-100 border border-base-200 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+    <div
+      className={`bg-base-100 border border-base-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group
+        ${highlighted ? "scale-[1.02] ring-2 ring-orange-400" : "opacity-60"}`}
+    >
 
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-4 left-4">
-            <span className="badge badge-primary badge-lg font-semibold gap-1">
-                <FiTag size={12} />
-                {product.category}
-            </span>
+          <span className="badge badge-primary badge-lg font-semibold gap-1">
+            <FiTag size={12} />
+            {product.category}
+          </span>
         </div>
       </div>
 

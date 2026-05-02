@@ -1,4 +1,7 @@
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
     FiArrowLeft,
     FiShoppingCart,
@@ -13,10 +16,14 @@ import {
 
 const ProductDetailsPage = async ({ params }) => {
     const { id } = await params;
+    const session = await auth.api.getSession({
+        headers: await headers(),
+    });
+    if (!session) redirect(`/login?callbackUrl=/products/${id}`);
+
     const res = await fetch("http://localhost:3000/products.json");
     const products = await res.json();
     const product = products.find((p) => p.id === parseInt(id));
-    console.log(product);
     if (!product) {
         return (
             <div className="min-h-screen flex items-center justify-center">
