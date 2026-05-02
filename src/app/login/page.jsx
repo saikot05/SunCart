@@ -1,5 +1,5 @@
 "use client";
-export const dynamic = "force-dynamic";
+import { Suspense } from "react";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
@@ -7,19 +7,19 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
-const LoginPage = () => {
+const LoginContent = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/";
+
     const handleLoginFunc = async (e) => {
         e.preventDefault();
-
         const email = e.currentTarget.email.value;
         const password = e.currentTarget.password.value;
 
         const { data, error } = await authClient.signIn.email({
-            email: email,
-            password: password,
+            email,
+            password,
             callbackURL: callbackUrl,
         });
 
@@ -27,7 +27,6 @@ const LoginPage = () => {
             toast.error("Login failed. Please try again.");
             return;
         }
-
         toast.success("Login successfully!");
         router.push(callbackUrl);
     };
@@ -57,35 +56,24 @@ const LoginPage = () => {
                 </div>
 
                 <Form className="flex flex-col gap-4" onSubmit={handleLoginFunc}>
-                    <TextField
-                        isRequired
-                        name="email"
-                        type="email"
-                        className="w-full"
+                    <TextField isRequired name="email" type="email" className="w-full"
                         validate={(value) => {
                             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value))
                                 return "Please enter a valid email address";
                             return null;
-                        }}
-                    >
+                        }}>
                         <Label>Email</Label>
                         <Input placeholder="john@example.com" />
                         <FieldError />
                     </TextField>
 
-                    <TextField
-                        isRequired
-                        minLength={8}
-                        name="password"
-                        type="password"
-                        className="w-full"
+                    <TextField isRequired minLength={8} name="password" type="password" className="w-full"
                         validate={(value) => {
                             if (value.length < 8) return "Password must be at least 8 characters";
                             if (!/[A-Z]/.test(value)) return "Password must contain at least one uppercase letter";
                             if (!/[0-9]/.test(value)) return "Password must contain at least one number";
                             return null;
-                        }}
-                    >
+                        }}>
                         <Label>Password</Label>
                         <Input placeholder="Enter your password" />
                         <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
@@ -96,12 +84,9 @@ const LoginPage = () => {
                         <Button type="submit" className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold py-2 rounded-full hover:scale-105 transition-transform duration-200">
                             Login
                         </Button>
-                        <Button
-                            type="button"
-                            variant="bordered"
+                        <Button type="button" variant="bordered"
                             className="w-full flex items-center justify-center gap-2"
-                            onPress={handleGoogle}
-                        >
+                            onPress={handleGoogle}>
                             <FcGoogle size={20} />
                             Continue with Google
                         </Button>
@@ -110,12 +95,19 @@ const LoginPage = () => {
 
                 <p className="text-center text-sm text-default-500">
                     Don&apos;t have an account?{" "}
-                    <Link href="/register" className="text-primary font-medium">
-                        Register
-                    </Link>
+                    <Link href="/register" className="text-primary font-medium">Register</Link>
                 </p>
             </div>
         </div>
+    );
+};
+
+
+const LoginPage = () => {
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+            <LoginContent />
+        </Suspense>
     );
 };
 
