@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProviders } from "./ThemeProviders";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </AuthProvider>
         </ThemeProviders>
+        <ToastContainer position="top-center" autoClose={3000} />
       </body>
     </html>
   );
