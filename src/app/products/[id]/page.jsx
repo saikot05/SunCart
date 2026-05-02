@@ -4,7 +4,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import {
     FiArrowLeft,
-    FiShoppingCart,
     FiHeart,
     FiShare2,
     FiStar,
@@ -13,6 +12,7 @@ import {
     FiCheckCircle,
     FiAlertCircle,
 } from "react-icons/fi";
+import AddToCartButton from "@/components/AddToCartButton"; 
 
 const ProductDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -131,7 +131,6 @@ const ProductDetailsPage = async ({ params }) => {
                                     </p>
                                     <p className="text-4xl font-extrabold text-base-content">
                                         ${product.price}
-                                
                                     </p>
                                 </div>
 
@@ -160,13 +159,8 @@ const ProductDetailsPage = async ({ params }) => {
                         </div>
 
                         <div className="space-y-3">
-                            <button
-                                className="btn w-full btn-lg gap-2 bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold py-2 rounded-full hover:scale-105 transition-transform duration-200"
-                                disabled={isOutOfStock}
-                            >
-                                <FiShoppingCart size={20} />
-                                {isOutOfStock ? "Out of Stock" : "Add to Cart"}
-                            </button>
+                            
+                            <AddToCartButton product={product} disabled={isOutOfStock} />
                             <div className="grid grid-cols-2 gap-3">
                                 <button className="btn btn-outline gap-2">
                                     <FiHeart size={16} />

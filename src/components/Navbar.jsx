@@ -2,14 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; 
 import { GiSun } from "react-icons/gi";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { FiShoppingCart } from "react-icons/fi"; 
 import { useTheme } from "next-themes";
 import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
+import { useCart } from "@/context/CartContext";
 import 'animate.css';
-import { router } from "better-auth/api";
 
 const Navbar = () => {
   const userData = authClient.useSession();
@@ -17,12 +18,14 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const { totalCount } = useCart();
 
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const handleLogout = async () => {
     await authClient.signOut();
-    router.push("/");
+    router.push("/"); 
   };
 
   const initials = user?.name?.split(" ").map((n) => n[0]).join("").toUpperCase();
@@ -62,6 +65,16 @@ const Navbar = () => {
           <button onClick={toggleTheme} className="btn btn-ghost btn-sm btn-circle">
             {theme === "dark" ? <MdLightMode size={18} /> : <MdDarkMode size={18} />}
           </button>
+
+         
+          <Link href="/cart" className="btn btn-ghost btn-sm btn-circle relative">
+            <FiShoppingCart size={20} />
+            {totalCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {totalCount > 99 ? "99+" : totalCount}
+              </span>
+            )}
+          </Link>
 
           {user ? (
             <div className="hidden md:block dropdown dropdown-end">
