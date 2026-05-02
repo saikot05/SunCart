@@ -6,13 +6,6 @@ export const auth = betterAuth({
         "https://sun-cart-8l8y-git-main-saikot05s-projects.vercel.app",
         "https://sun-cart-8l8y-ljkx0xfwn-saikot05s-projects.vercel.app",
     ],
-    advanced: {
-        disableCSRFCheck: true,
-        crossSubDomainCookies: {
-            enabled: true,
-            domain: "vercel.app"
-        }
-    },
     emailAndPassword: {
         enabled: true,
     },
