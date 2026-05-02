@@ -2,13 +2,13 @@ import { GiSunflower } from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
 import ProductsCard from "@/components/ProductsCard";
 import SearchFilter from "@/components/SearchFilter";
-
+import products from "@/public/products.json";
 const Products = async ({ searchParams }) => {
-  const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
-  const products = await res.json();
+  // const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
+  // const products = await res.json();
 
-  const { q, category: selectedCategory = "" } = await searchParams; // ✅ একবারই declare
-  const query = q?.toLowerCase() ?? "";                               // ✅ q থেকে নেওয়া
+  const { q, category: selectedCategory = "" } = await searchParams; 
+  const query = q?.toLowerCase() ?? "";                               
 
   const categories = [...new Set(products.map((p) => p.category).filter(Boolean))];
 

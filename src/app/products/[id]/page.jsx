@@ -13,6 +13,7 @@ import {
     FiAlertCircle,
 } from "react-icons/fi";
 import AddToCartButton from "@/components/AddToCartButton"; 
+import products from "@/public/products.json";
 
 const ProductDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -21,8 +22,8 @@ const ProductDetailsPage = async ({ params }) => {
     });
     if (!session) redirect(`/login?callbackUrl=/products/${id}`);
 
-    const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
-    const products = await res.json();
+    // const res = await fetch(`${process.env.BETTER_AUTH_URL}/products.json`);
+    // const products = await res.json();
     const product = products.find((p) => p.id === parseInt(id));
     if (!product) {
         return (
