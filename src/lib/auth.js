@@ -1,5 +1,3 @@
-import dns from "node:dns";
-dns.setServers(['8.8.8.8', '8.8.4.4']);
 import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
@@ -9,22 +7,26 @@ const db = client.db('suncart');
 
 export const auth = betterAuth({
     database: mongodbAdapter(db, { client }),
+
+    baseURL: process.env.BETTER_AUTH_URL,
     trustedOrigins: [
         "http://localhost:3000",
         "https://sun-cart-8l8y.vercel.app",
         "https://sun-cart-8l8y-git-main-saikot05s-projects.vercel.app",
         "https://sun-cart-8l8y-ljkx0xfwn-saikot05s-projects.vercel.app",
     ],
+
     advanced: {
         disableCSRFCheck: true,
         crossSubDomainCookies: {
-            enabled: true,
-            domain: "vercel.app"
+            enabled: false,
         }
     },
+
     emailAndPassword: {
         enabled: true,
     },
+
     socialProviders: {
         google: {
             clientId: process.env.Google_Client_Id,
