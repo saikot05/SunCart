@@ -1,9 +1,11 @@
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
-import { CartProvider } from "@/context/CartContext"; {/* ✅ নতুন */}
+import { CartProvider } from "@/context/CartContext";
 import { ThemeProviders } from "./ThemeProviders";
 import { ToastContainer } from "react-toastify";
 

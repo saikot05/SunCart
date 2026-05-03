@@ -26,8 +26,8 @@ const ProfilePage = () => {
 
                 <Link
                     href="/profile/update"
-                    className="btn btn-sm text-white border-0 w-full text-center rounded-full"
-                    style={{ background: "linear-gradient(90deg, #f97316, #ec4899)" }}
+                    className="btn btn-sm text-white border-0 w-full text-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent "
+                    
                 >
                     Update Information
                 </Link>
