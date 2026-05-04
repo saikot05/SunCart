@@ -74,7 +74,7 @@ const UpdateProfilePage = () => {
 
                     <Button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold py-2 rounded-full hover:scale-105 transition-transform duration-200"
+                        className="w-full bg-gradient-to-r from-orange-400 to-pink-500  font-bold py-2 rounded-full hover:scale-105 transition-transform duration-200"
                     >
                         Update Information
                     </Button>
