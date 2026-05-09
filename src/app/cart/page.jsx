@@ -127,9 +127,9 @@ const CartPage = () => {
                   ${totalPrice.toFixed(2)}
                 </span>
               </div>
-              <button className="btn w-full btn-lg bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold border-0 rounded-full hover:scale-105 transition-transform duration-200">
+              <Link href="/checkout" className="btn w-full btn-lg bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold border-0 rounded-full hover:scale-105 transition-transform duration-200">
                 Proceed to Checkout
-              </button>
+              </Link>
             </div>
 
           </div>
