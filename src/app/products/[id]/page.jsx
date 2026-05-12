@@ -51,14 +51,14 @@ const ProductDetailsPage = async ({ params }) => {
         <div className="min-h-screen bg-base-200">
             <div className="container mx-auto px-4 py-8 max-w-6xl">
                 <Link
-                    href="/"
+                    href="/products"
                     className="inline-flex items-center gap-2 text-base-content/60 hover:text-base-content transition-colors mb-8 group"
                 >
                     <FiArrowLeft
                         size={18}
                         className="group-hover:-translate-x-1 transition-transform"
                     />
-                    <span className="text-sm font-medium">Back to Shop</span>
+                    <span className="text-sm font-medium">Back to Products</span>
                 </Link>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-base-100 rounded-3xl shadow-xl overflow-hidden">

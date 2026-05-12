@@ -6,7 +6,7 @@ const SummerCareTips = async () => {
   //  const tips = await res.json();
 
   return (
-    <section className="py-14 px-6 bg-white">
+    <section className="py-14 px-6 bg-base-100">
       <div className="container mx-auto">
 
         <div className="text-center mb-10">
@@ -14,12 +14,12 @@ const SummerCareTips = async () => {
             <FaIcons.FaTint className="text-blue-400" />
             Expert Advice
           </span>
-          <h2 className="text-3xl font-extrabold text-gray-800 flex items-center justify-center gap-2">
+          <h2 className="text-3xl font-extrabold text-base-content flex items-center justify-center gap-2">
             <FaIcons.FaRegSun className="text-orange-400" />
             Summer Care Tips
             <FaIcons.FaRegSun className="text-orange-400" />
           </h2>
-          <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+          <p className="text-base-content/60 mt-2 max-w-xl mx-auto">
             Keep your skin healthy, glowing, and protected all season long with
             these easy-to-follow summer essentials.
           </p>
@@ -32,13 +32,13 @@ const SummerCareTips = async () => {
             return (
               <div
                 key={tip.id}
-                className={`${tip.bg} border ${tip.border} rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300`}
+                className={`bg-base-100 border border-base-300 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300`}
               >
                 {IconComponent && (
                   <IconComponent className={`text-3xl ${tip.iconColor} mb-3`} />
                 )}
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{tip.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{tip.description}</p>
+                <h3 className="text-lg font-bold text-base-content mb-2">{tip.title}</h3>
+                <p className="text-base-content/70 text-sm leading-relaxed">{tip.description}</p>
               </div>
             );
           })}

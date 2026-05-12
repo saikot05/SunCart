@@ -21,13 +21,12 @@ const ProfilePage = () => {
 
                 <div className="text-center">
                     <h2 className="text-xl font-bold">{user.name}</h2>
-                    <p className="text-sm text-gray-500 mt-1">{user.email}</p>
+                    <p className="text-sm text-base-content/60 mt-1">{user.email}</p>
                 </div>
 
                 <Link
                     href="/profile/update"
-                    className="btn btn-sm text-white border-0 w-full text-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent "
-                    
+                    className="btn btn-sm text-white border-0 w-full text-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 hover:scale-105 transition-transform duration-200"
                 >
                     Update Information
                 </Link>

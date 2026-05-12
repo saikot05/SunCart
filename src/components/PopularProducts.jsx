@@ -10,7 +10,7 @@ const PopularProducts = async () => {
   const featured = products.slice(0, 3);
 
   return (
-    <section className="py-14 px-6 bg-orange-50">
+    <section className="py-14 px-6 bg-base-200">
       <div className="container mx-auto">
 
         <div className="text-center mb-10">
@@ -18,12 +18,12 @@ const PopularProducts = async () => {
             <GiSunflower className="text-yellow-500 text-lg" />
             Summer Collection
           </span>
-          <h2 className="text-3xl font-extrabold text-gray-800 flex items-center justify-center gap-2">
+          <h2 className="text-3xl font-extrabold text-base-content flex items-center justify-center gap-2">
             <FaFire className="text-orange-500" />
             Popular Products
             <FaFire className="text-orange-500" />
           </h2>
-          <p className="text-gray-500 mt-2">Top picks just for you this summer</p>
+          <p className="text-base-content/60 mt-2">Top picks just for you this summer</p>
           <Link href="/products">
             <button className="mt-4 inline-flex items-center gap-2 text-pink-500 font-semibold hover:gap-3 transition-all">
               See All Products <FaArrowRight />

@@ -7,7 +7,7 @@ const TopBrands = async () => {
   // const brands = await res.json();
 
   return (
-    <section className="py-14 px-6 bg-white">
+    <section className="py-14 px-6 bg-base-200">
       <div className="container mx-auto">
 
         <div className="text-center mb-10">
@@ -15,12 +15,12 @@ const TopBrands = async () => {
             <FaMedal className="text-yellow-400" />
             Trusted Names
           </span>
-          <h2 className="text-3xl font-extrabold text-gray-800 flex items-center justify-center gap-2">
+          <h2 className="text-3xl font-extrabold text-base-content flex items-center justify-center gap-2">
             <GiDiamondRing className="text-pink-400" />
             Top Brands
             <GiDiamondRing className="text-pink-400" />
           </h2>
-          <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+          <p className="text-base-content/60 mt-2 max-w-xl mx-auto">
             Explore products from our most trusted and loved beauty & skincare brands this summer.
           </p>
         </div>
@@ -29,7 +29,7 @@ const TopBrands = async () => {
           {brands.map((brand) => (
             <div
               key={brand.id}
-              className={`group ${brand.bgLight} border ${brand.borderColor} rounded-3xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden`}
+              className={`group bg-base-100 border border-base-300 rounded-3xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden`}
             >
               <div className={`absolute -top-8 -right-8 w-24 h-24 rounded-full bg-gradient-to-br ${brand.color} opacity-20 group-hover:opacity-40 transition-opacity duration-300`} />
 
@@ -38,16 +38,16 @@ const TopBrands = async () => {
               <h3 className={`text-xl font-extrabold ${brand.textColor} mb-1`}>
                 {brand.name}
               </h3>
-              <p className="text-gray-600 text-sm font-medium mb-3">
+              <p className="text-base-content/60 text-sm font-medium mb-3">
                 {brand.tagline}
               </p>
 
               <div className="flex flex-col gap-1">
-                <span className="text-xs text-gray-400 flex items-center gap-1">
+                <span className="text-xs text-base-content/50 flex items-center gap-1">
                   <FaCheckCircle className={brand.textColor} />
                   {brand.since}
                 </span>
-                <span className="text-xs text-gray-400 flex items-center gap-1">
+                <span className="text-xs text-base-content/50 flex items-center gap-1">
                   <HiSparkles className={brand.textColor} />
                   {brand.products}
                 </span>

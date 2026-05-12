@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 @plugin "daisyui";
+
+/* Wire Tailwind's dark: prefix to DaisyUI's data-theme attribute */
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
     /* Override any color variable */
     --accent: oklch(0.7 0.25 260);

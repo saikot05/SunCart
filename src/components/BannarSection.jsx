@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight, FaFire, FaShoppingCart } from "react-icons/fa";
 
 
@@ -19,12 +20,12 @@ const BannarSection = () => {
             Grab the best deals before they&apos;re gone!
           </p>
           <div className="flex gap-4 justify-center md:justify-start">
-            <button className="bg-white text-pink-500 font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform inline-flex items-center gap-2">
+            <Link href="/products" className="bg-white text-pink-500 font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform inline-flex items-center gap-2">
               <FaShoppingCart /> Shop Now
-            </button>
-            <button className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-pink-500 transition-all inline-flex items-center gap-2">
+            </Link>
+            <Link href="/products" className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-pink-500 transition-all inline-flex items-center gap-2">
               Explore <FaArrowRight />
-            </button>
+            </Link>
           </div>
         </div>
 
